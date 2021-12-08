@@ -1,15 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { NavigationContainer } from '@react-navigation/native';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 
-import { SafeAreaView } from 'react-native';
 import store, { persistor } from './app/store/index';
 import { PERSISTENCE } from './app/store/config';
 import { Router } from './app/router';
 
-export const App = () => (
+const App = () => (
   <Provider store={store}>
-    <SafeAreaView>
+    <NavigationContainer>
       {PERSISTENCE ? (
         <PersistGate loading={null} persistor={persistor}>
           <Router />
@@ -17,6 +18,8 @@ export const App = () => (
       ) : (
         <Router />
       )}
-    </SafeAreaView>
+    </NavigationContainer>
   </Provider>
 );
+
+export default gestureHandlerRootHOC(App);
