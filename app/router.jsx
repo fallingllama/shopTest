@@ -18,10 +18,12 @@ export const Router = () => {
 
   useEffect(() => {
     const test = async () => {
+      console.log('Fetching catalog...');
       const res = await api.getCatalog();
 
       if (res) {
         dispatch(setCatalog(res));
+        console.log('Catalog set in state.');
       }
     };
 
