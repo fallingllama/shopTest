@@ -1,4 +1,10 @@
-import { SET_CATALOG, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from './actions';
+import {
+  SET_CATALOG,
+  ADD_TO_CART,
+  REMOVE_ONE_FROM_CART,
+  REMOVE_ALL_OF_REFERENCE_FROM_CART,
+  CLEAR_CART,
+} from './actions';
 
 const initialState = {
   cart: [],
@@ -27,7 +33,7 @@ function rootReducer(state = initialState, action = () => {}) {
         ],
       };
 
-    case REMOVE_FROM_CART: {
+    case REMOVE_ONE_FROM_CART: {
       const cartProduct = state.cart.find(p => p.reference === action.reference);
       const newCart = state.cart.filter(p => p.reference !== action.reference);
 
@@ -41,6 +47,13 @@ function rootReducer(state = initialState, action = () => {}) {
       return {
         ...state,
         cart: newCart,
+      };
+    }
+
+    case REMOVE_ALL_OF_REFERENCE_FROM_CART: {
+      return {
+        ...state,
+        cart: state.cart.filter(p => p.reference !== action.reference),
       };
     }
 
