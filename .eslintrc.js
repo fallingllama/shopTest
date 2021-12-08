@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'react/function-component-definition': 0, // Bug in airbnb rules
+    'react/jsx-one-expression-per-line': 0,
     'max-len': 0,
     'arrow-parens': 0,
     'no-unused-expressions': 0,
