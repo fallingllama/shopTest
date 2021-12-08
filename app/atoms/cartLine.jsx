@@ -14,6 +14,8 @@ const CartContainer = styled(TouchableOpacity)`
   background-color: ${ThemeColors.itemBackground};
   padding: 20px;
   margin: 5px;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const CartLine = ({ navigation }) => {
@@ -34,9 +36,10 @@ export const CartLine = ({ navigation }) => {
 
   return (
     <CartContainer onPress={handleCartButton} style={{ ...ThemeStyles.mainContainer }}>
-      <Text>
-        {`Items in cart: ${totals.qty} | ${totals.duration} | ${totals.price} €`}
-      </Text>
+      <Text style={{ fontWeight: 'bold' }}>Cart:</Text>
+      <Text>{`${totals.qty} items`}</Text>
+      <Text>{`${totals.duration}`}</Text>
+      <Text>{`${totals.price} €`}</Text>
     </CartContainer>
   );
 };

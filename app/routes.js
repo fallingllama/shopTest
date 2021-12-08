@@ -1,5 +1,5 @@
 export const Routes = {
-  CATALOG: 'Catalogue',
-  PRODUCTS: 'Prestations disponibles',
-  CART: 'Panier',
+  CATALOG: 'Catalog',
+  PRODUCTS: 'Available products',
+  CART: 'Shopping cart',
 };

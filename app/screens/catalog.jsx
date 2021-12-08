@@ -17,7 +17,7 @@ export const Catalog = ({ navigation }) => {
   });
 
   return (
-    <SafeAreaView>
+    <>
       <View style={{ ...ThemeStyles.mainContainer }}>
         {title ? <H1>{title} categories</H1> : null}
         {categories.map(cat => (
@@ -30,8 +30,10 @@ export const Catalog = ({ navigation }) => {
           />
         ))}
       </View>
-      <CartLine navigation={navigation} />
-    </SafeAreaView>
+      <SafeAreaView>
+        <CartLine navigation={navigation} />
+      </SafeAreaView>
+    </>
   );
 };
 

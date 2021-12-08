@@ -4,12 +4,14 @@ import styled from 'styled-components';
 export const ThemeStyles = {
   mainContainer: {
     padding: 15,
+    flexGrow: 1,
   },
 };
 
 export const ThemeColors = {
-  borders: '#3f3f3f',
+  borders: '#aaaaaa',
   itemBackground: '#ffffff',
+  danger: '#A00',
 };
 
 export const H1 = styled(Text)`

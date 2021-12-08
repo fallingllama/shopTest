@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 import { H3 } from '../theme';
 import { ListItem } from './listItem';
 import { addOneToCart } from '../store/actions';
+import { minsToHourMins } from '../utils';
 
 export const Product = ({ product }) => {
-  const { duration, price, reference, title } = product;
+  const { duration, price, title } = product;
   const dispatch = useDispatch();
 
   const handleProductButton = useCallback(() => {
@@ -18,9 +19,8 @@ export const Product = ({ product }) => {
   return (
     <ListItem onPress={handleProductButton}>
       <H3>{title}</H3>
-      <Text>{reference}</Text>
-      <Text>{price}</Text>
-      <Text>{duration}</Text>
+      <Text>{minsToHourMins(duration)}</Text>
+      <Text>{`${price} € / h`}</Text>
     </ListItem>
   );
 };

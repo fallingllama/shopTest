@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import { ThemeStyles, H1 } from '../theme';
 
 import { Product } from '../atoms/product';
@@ -10,15 +10,19 @@ export const Products = ({ navigation, route }) => {
   const { title, prestations } = route.params || {};
 
   return (
-    <SafeAreaView>
-      <ScrollView style={{ ...ThemeStyles.mainContainer }}>
-        {title ? <H1>Prestations {title}</H1> : null}
-        {prestations.map(product => (
-          <Product key={`product-${product.title}`} product={product} />
-        ))}
-      </ScrollView>
-      <CartLine navigation={navigation} />
-    </SafeAreaView>
+    <>
+      <View style={{ ...ThemeStyles.mainContainer }}>
+        <ScrollView style={{ height: '90%' }}>
+          {title ? <H1>{title} products</H1> : null}
+          {prestations.map(product => (
+            <Product key={`product-${product.title}`} product={product} />
+          ))}
+        </ScrollView>
+      </View>
+      <SafeAreaView>
+        <CartLine navigation={navigation} />
+      </SafeAreaView>
+    </>
   );
 };
 
