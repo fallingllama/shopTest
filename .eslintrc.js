@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'operator-linebreak': 0,
     'react/function-component-definition': 0, // Bug in airbnb rules
     'react/jsx-one-expression-per-line': 0,
     'max-len': 0,

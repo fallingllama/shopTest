@@ -1,14 +1,18 @@
 import React, { useCallback } from 'react';
-import PropTypes from 'prop-types';
 import { Text } from 'react-native';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { H3 } from '../theme';
 import { ListItem } from './listItem';
+import { addOneToCart } from '../store/actions';
 
-export const Product = ({ duration, price, reference, title }) => {
+export const Product = product => {
+  const { duration, price, reference, title } = product;
+  const dispatch = useDispatch();
+
   const handleProductButton = useCallback(() => {
-    console.log(reference, 'button pressed');
-    // TODO: add to basket
+    dispatch(addOneToCart(product));
   });
 
   return (
@@ -22,8 +26,10 @@ export const Product = ({ duration, price, reference, title }) => {
 };
 
 Product.propTypes = {
-  duration: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
-  reference: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  product: PropTypes.shape({
+    duration: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    reference: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };

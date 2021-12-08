@@ -2,12 +2,14 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView, View } from 'react-native';
 import { useSelector } from 'react-redux';
+
 import { Category } from '../atoms/category';
 import { ThemeStyles, H1 } from '../theme';
 import { Routes } from '../routes';
+import { getWholeCatalog } from '../store/selectors';
 
 export const Catalog = ({ navigation }) => {
-  const { categories, title } = useSelector(({ catalog }) => catalog);
+  const { categories = [], title } = useSelector(getWholeCatalog);
 
   const handleCategoryButton = useCallback(cat => () => {
     navigation.push(Routes.PRODUCTS, cat);
