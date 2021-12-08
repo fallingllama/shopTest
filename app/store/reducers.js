@@ -1,13 +1,13 @@
-import { SOMETHING } from './actions';
+import { SET_CATALOG } from './actions';
 
 const initialState = {};
 
 function rootReducer(state = initialState, action = () => {}) {
   switch (action.type) {
-    case SOMETHING:
+    case SET_CATALOG:
       return {
         ...state,
-        something: { ...action.something },
+        catalog: { ...action.payload },
       };
 
     default:

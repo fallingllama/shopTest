@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'react/function-component-definition': 0, // Bug in airbnb rules
     'max-len': 0,
+    'arrow-parens': 0,
     'no-unused-expressions': 0,
     'no-plusplus': 0,
     'import/prefer-default-export': 0,
