@@ -7,7 +7,7 @@ import { H3 } from '../theme';
 import { ListItem } from './listItem';
 import { addOneToCart } from '../store/actions';
 
-export const Product = product => {
+export const Product = ({ product }) => {
   const { duration, price, reference, title } = product;
   const dispatch = useDispatch();
 

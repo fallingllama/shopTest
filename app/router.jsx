@@ -9,6 +9,7 @@ import { Routes } from './routes';
 
 import { Catalog } from './screens/catalog';
 import { Products } from './screens/products';
+import { Cart } from './screens/cart';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ export const Router = () => {
     <Stack.Navigator initialRouteName={Routes.CATALOG}>
       <Stack.Screen name={Routes.CATALOG} component={Catalog} />
       <Stack.Screen name={Routes.PRODUCTS} component={Products} />
+      <Stack.Screen name={Routes.CART} component={Cart} />
     </Stack.Navigator>
   );
 };

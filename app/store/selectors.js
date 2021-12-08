@@ -1,4 +1,4 @@
-/* eslint indent: 0, implicit-arrow-linebreak: 0 */
+/* eslint indent: 0 */
 export const getWholeCatalog = ({ catalog }) => catalog;
 
 export const getProductByCatAndReference =
@@ -7,3 +7,5 @@ export const getProductByCatAndReference =
     catalog.categories
       .find(c => c.reference === catRef)
       ?.prestations?.find(p => p.reference === productRef) || false;
+
+export const getCart = ({ cart }) => cart;

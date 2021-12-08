@@ -9,6 +9,7 @@ export const ThemeStyles = {
 
 export const ThemeColors = {
   borders: '#3f3f3f',
+  itemBackground: '#ffffff',
 };
 
 export const H1 = styled(Text)`

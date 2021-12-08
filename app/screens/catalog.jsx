@@ -7,6 +7,7 @@ import { Category } from '../atoms/category';
 import { ThemeStyles, H1 } from '../theme';
 import { Routes } from '../routes';
 import { getWholeCatalog } from '../store/selectors';
+import { CartLine } from '../atoms/cartLine';
 
 export const Catalog = ({ navigation }) => {
   const { categories = [], title } = useSelector(getWholeCatalog);
@@ -29,6 +30,7 @@ export const Catalog = ({ navigation }) => {
           />
         ))}
       </View>
+      <CartLine navigation={navigation} />
     </SafeAreaView>
   );
 };
