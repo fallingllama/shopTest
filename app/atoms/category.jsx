@@ -1,22 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity } from 'react-native';
-import styled from 'styled-components';
-import { H3, ThemeColors } from '../theme';
+import { H3 } from '../theme';
+import { ListItem } from './listItem';
 
-const CategoryContainer = styled(TouchableOpacity)`
-  border: 1px solid ${ThemeColors.borders};
-  border-radius: 15px;
-  padding: 20px;
-  margin: 5px;
-`;
-
-export const Category = ({
-  products, reference, title, ...props
-}) => (
-  <CategoryContainer {...props}>
+export const Category = ({ products, reference, title, ...props }) => (
+  <ListItem {...props}>
     <H3>{title}</H3>
-  </CategoryContainer>
+  </ListItem>
 );
 
 Category.propTypes = {

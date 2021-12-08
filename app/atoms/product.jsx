@@ -1,16 +1,9 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native';
 
-import { H3, ThemeColors } from '../theme';
-
-const ProductContainer = styled(TouchableOpacity)`
-  border: 1px solid ${ThemeColors.borders};
-  border-radius: 15px;
-  padding: 20px;
-  margin: 5px;
-`;
+import { H3 } from '../theme';
+import { ListItem } from './listItem';
 
 export const Product = ({ duration, price, reference, title }) => {
   const handleProductButton = useCallback(() => {
@@ -19,12 +12,12 @@ export const Product = ({ duration, price, reference, title }) => {
   });
 
   return (
-    <ProductContainer onPress={handleProductButton}>
+    <ListItem onPress={handleProductButton}>
       <H3>{title}</H3>
       <Text>{reference}</Text>
       <Text>{price}</Text>
       <Text>{duration}</Text>
-    </ProductContainer>
+    </ListItem>
   );
 };
 
