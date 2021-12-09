@@ -13,7 +13,6 @@ export const useApi = () => {
       jsonRes = await res.json();
     } catch (error) {
       // TODO: error mgmt
-      console.log(error);
     }
 
     return jsonRes;

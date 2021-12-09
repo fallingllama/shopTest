@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import { Text as RNText } from 'react-native';
 import styled from 'styled-components';
 
 export const ThemeStyles = {
@@ -9,10 +9,15 @@ export const ThemeStyles = {
 };
 
 export const ThemeColors = {
-  borders: '#aaaaaa',
-  itemBackground: '#ffffff',
+  fontMain: '#000',
+  borders: '#aaa',
+  itemBackground: '#fff',
   danger: '#A00',
 };
+
+export const Text = styled(RNText)`
+  color: ${ThemeColors.fontMain};
+`;
 
 export const H1 = styled(Text)`
   font-size: 20px;

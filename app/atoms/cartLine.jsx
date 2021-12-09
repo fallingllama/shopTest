@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { getCart } from '../store/selectors';
-import { ThemeColors, ThemeStyles } from '../theme';
+import { Text, ThemeColors, ThemeStyles } from '../theme';
 import { Routes } from '../routes';
 import { getDurationTotal, getPriceTotal, getQtyTotal } from '../utils';
 

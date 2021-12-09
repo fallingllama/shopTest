@@ -1,9 +1,8 @@
 import React, { useCallback } from 'react';
-import { Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { H3 } from '../theme';
+import { Text, H3 } from '../theme';
 import { ListItem } from './listItem';
 import { addOneToCart } from '../store/actions';
 import { minsToHourMins } from '../utils';

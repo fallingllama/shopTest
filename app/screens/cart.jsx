@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -9,7 +9,7 @@ import {
   removeOneFromCart,
 } from '../store/actions';
 import { getCart } from '../store/selectors';
-import { H1, H3, ThemeColors, ThemeStyles } from '../theme';
+import { Text, H1, H3, ThemeColors, ThemeStyles } from '../theme';
 import { getDurationTotal, getPriceTotal } from '../utils';
 
 const RemoveLink = styled(H3)`
@@ -18,6 +18,7 @@ const RemoveLink = styled(H3)`
 
 const CartItem = styled(View)`
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 `;
 
